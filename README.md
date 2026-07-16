@@ -193,7 +193,6 @@ Validates the functionality of the complete RTL implementation.
 
 ✔ Complete RTL Simulation Successful
 
-> *(Simulation waveform images will be added here.)*
 
 ---
 
