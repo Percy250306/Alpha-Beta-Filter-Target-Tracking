@@ -1,33 +1,45 @@
-# 🚀 Alpha-Beta Filter Target Tracking using Verilog HDL
+<h1 align="center">Alpha-Beta Filter Target Tracking using Verilog HDL</h1>
 
-## 📖 Overview
-
-This project implements an **Alpha-Beta Filter** in **Verilog HDL** for real-time target tracking applications. The filter estimates the target's **position** and **velocity** using noisy radar measurements and predicts the next target position using fixed-point arithmetic (Q8.8).
-
-The design is modular, synthesizable, and verified using **Xilinx Vivado 2025.2**.
+<p align="center">
+A modular RTL implementation of an Alpha-Beta Filter for real-time target tracking using fixed-point (Q8.8) arithmetic.
+</p>
 
 ---
 
-## 🎯 Objectives
+## ◉ Project Overview
 
-- Design an Alpha-Beta Filter using Verilog HDL
-- Predict target position from radar measurements
-- Estimate target velocity
-- Implement Q8.8 fixed-point arithmetic
-- Verify the design using Vivado simulation
+The Alpha-Beta Filter is a lightweight tracking algorithm used in radar and navigation systems to estimate a moving target's **position** and **velocity** from noisy measurements.
+
+This project implements the complete Alpha-Beta Filter in **Verilog HDL** using a modular RTL architecture. The design was verified using **Xilinx Vivado 2025.2** and uses **Q8.8 fixed-point arithmetic** for efficient FPGA implementation.
 
 ---
 
-## 🛠 Tools Used
+## ◎ Project Objectives
 
-- Verilog HDL
-- Xilinx Vivado 2025.2
-- FPGA RTL Design
-- Fixed-Point Arithmetic (Q8.8)
+✔ Predict the next target position
+
+✔ Estimate target velocity
+
+✔ Reduce measurement noise
+
+✔ Implement Q8.8 fixed-point arithmetic
+
+✔ Verify functionality through simulation
 
 ---
 
-## 📂 Project Structure
+## ◉ Technologies Used
+
+| Category | Tool |
+|----------|------|
+| HDL | Verilog |
+| FPGA Tool | Xilinx Vivado 2025.2 |
+| Number Format | Q8.8 Fixed Point |
+| Verification | Behavioral Simulation |
+
+---
+
+## ◉ Project Structure
 
 ```text
 Alpha-Beta-Filter-Target-Tracking
@@ -43,48 +55,75 @@ Alpha-Beta-Filter-Target-Tracking
 
 ---
 
-## 🧩 RTL Modules
+## ◉ RTL Modules
 
-| Module | Description |
-|---------|-------------|
-| alpha_beta_filter.v | Top module integrating all blocks |
-| predictor.v | Predicts the next target position |
-| residual.v | Calculates the prediction error (residual) |
-| position_update.v | Updates the estimated position |
-| velocity_update.v | Updates the estimated velocity |
-| register_bank.v | Stores position and velocity values |
-| tb_alpha_beta.v | Testbench for functional simulation |
-
----
-
-## ⚙️ Working Principle
-
-1. Receive radar measurements (Range & Doppler).
-2. Predict the next target position.
-3. Calculate the residual (prediction error).
-4. Correct the estimated position.
-5. Update the estimated velocity.
-6. Store the updated values for the next prediction cycle.
+| File | Purpose |
+|------|---------|
+| alpha_beta_filter.v | Top-level module |
+| predictor.v | Predicts future position |
+| residual.v | Calculates prediction error |
+| position_update.v | Updates estimated position |
+| velocity_update.v | Updates estimated velocity |
+| register_bank.v | Stores current estimates |
+| tb_alpha_beta.v | Testbench |
 
 ---
 
-## 📊 Simulation
+## ◉ Algorithm Flow
 
-The design was simulated successfully in **Xilinx Vivado 2025.2**, and the waveform verified the correct prediction and update operations of the Alpha-Beta Filter.
+```text
+Radar Measurement
+        │
+        ▼
+Prediction Stage
+        │
+        ▼
+Residual Calculation
+        │
+        ▼
+Position Update
+        │
+        ▼
+Velocity Update
+        │
+        ▼
+Updated Estimate
+```
 
 ---
 
-## 🚀 Applications
+## ◉ Simulation
 
-- Radar Target Tracking
-- Autonomous Vehicles
-- UAV Navigation
-- Robotics
-- Missile Guidance Systems
+The design was successfully simulated in **Xilinx Vivado 2025.2**.
+
+Simulation verified:
+
+- Position prediction
+- Residual computation
+- Position correction
+- Velocity correction
+- Register updates
 
 ---
 
-## 👨‍💻 Author
+## ◉ Applications
+
+• Radar Target Tracking
+
+• Air Traffic Surveillance
+
+• UAV Navigation
+
+• Autonomous Vehicles
+
+• Robotics
+
+• Defense Systems
+
+---
+---
+
+## 👩‍💻 Author
 
 **Percy Deborah**
 
