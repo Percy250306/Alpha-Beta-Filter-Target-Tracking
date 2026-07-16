@@ -1,43 +1,51 @@
-<h1 align="center">Alpha-Beta Filter Target Tracking using Verilog HDL</h1>
-
 <p align="center">
-A modular RTL implementation of an Alpha-Beta Filter for real-time target tracking using fixed-point (Q8.8) arithmetic.
+
+# Alpha-Beta Filter Target Tracking
+
+### *A Hardware-Efficient RTL Implementation using Verilog HDL*
+
+<img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=22&duration=3000&pause=1000&color=00C2FF&center=true&vCenter=true&width=700&lines=Real-Time+Target+Tracking;FPGA+Implementation;Verilog+HDL;Fixed-Point+Q8.8+Arithmetic" />
+
 </p>
 
----
+<p align="center">
 
-## ◉ Project Overview
+![Verilog](https://img.shields.io/badge/Language-Verilog-blue?style=for-the-badge)
 
-The Alpha-Beta Filter is a lightweight tracking algorithm used in radar and navigation systems to estimate a moving target's **position** and **velocity** from noisy measurements.
+![Vivado](https://img.shields.io/badge/Tool-Xilinx%20Vivado-darkgreen?style=for-the-badge)
 
-This project implements the complete Alpha-Beta Filter in **Verilog HDL** using a modular RTL architecture. The design was verified using **Xilinx Vivado 2025.2** and uses **Q8.8 fixed-point arithmetic** for efficient FPGA implementation.
+![FPGA](https://img.shields.io/badge/Platform-FPGA-orange?style=for-the-badge)
 
----
+![RTL](https://img.shields.io/badge/Design-RTL-red?style=for-the-badge)
 
-## ◎ Project Objectives
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
 
-✔ Predict the next target position
+</p>
+# Overview
 
-✔ Estimate target velocity
+Modern radar systems receive noisy measurements due to environmental interference and sensor inaccuracies. To obtain an accurate estimate of a moving target's position and velocity, prediction algorithms are employed.
 
-✔ Reduce measurement noise
+This project presents a complete RTL implementation of an **Alpha-Beta Filter** using **Verilog HDL**. The design predicts the next target position, calculates the prediction error (residual), and continuously refines the position and velocity estimates using fixed-point arithmetic (Q8.8).
 
-✔ Implement Q8.8 fixed-point arithmetic
+The architecture is modular, synthesizable, and verified through simulation in **Xilinx Vivado 2025.2**.
 
-✔ Verify functionality through simulation
-
----
-
-## ◉ Technologies Used
-
-| Category | Tool |
-|----------|------|
-| HDL | Verilog |
-| FPGA Tool | Xilinx Vivado 2025.2 |
-| Number Format | Q8.8 Fixed Point |
-| Verification | Behavioral Simulation |
-
----
+Radar Input
+      │
+      ▼
+ Predictor
+      │
+      ▼
+ Residual
+      │
+      ▼
+ Position Update
+      │
+      ▼
+ Velocity Update
+      │
+      ▼
+ Register Bank
+ 
 
 ## ◉ Project Structure
 
@@ -55,78 +63,81 @@ Alpha-Beta-Filter-Target-Tracking
 
 ---
 
-## ◉ RTL Modules
+## RTL Modules
 
-| File | Purpose |
-|------|---------|
-| alpha_beta_filter.v | Top-level module |
-| predictor.v | Predicts future position |
-| residual.v | Calculates prediction error |
-| position_update.v | Updates estimated position |
-| velocity_update.v | Updates estimated velocity |
-| register_bank.v | Stores current estimates |
-| tb_alpha_beta.v | Testbench |
+### Predictor
+
+Predicts the future position using the current position and velocity.
 
 ---
 
-## ◉ Algorithm Flow
+### Residual
 
-```text
-Radar Measurement
-        │
-        ▼
-Prediction Stage
-        │
-        ▼
-Residual Calculation
-        │
-        ▼
-Position Update
-        │
-        ▼
-Velocity Update
-        │
-        ▼
-Updated Estimate
-```
+Computes the prediction error between the measured and predicted position.
 
 ---
 
-## ◉ Simulation
+### Position Update
 
-The design was successfully simulated in **Xilinx Vivado 2025.2**.
-
-Simulation verified:
-
-- Position prediction
-- Residual computation
-- Position correction
-- Velocity correction
-- Register updates
+Updates the estimated position using the Alpha gain.
 
 ---
+
+### Velocity Update
+
+Updates the estimated velocity using the Beta gain.
+
+---
+
+### Register Bank
+
+Stores the updated position and velocity values.
+
+---
+
+### Top Module
+
+Integrates all RTL blocks into a complete Alpha-Beta Filter.
+
+---
+
+## Simulation Results
+
+✔ Position Prediction
+
+✔ Residual Calculation
+
+✔ Position Correction
+
+✔ Velocity Correction
+
+✔ Register Update
+
+✔ Stable Tracking
 
 ## ◉ Applications
 
-• Radar Target Tracking
+Radar Tracking
 
-• Air Traffic Surveillance
+Autonomous Navigation
 
-• UAV Navigation
+Robotics
 
-• Autonomous Vehicles
+Industrial Automation
 
-• Robotics
+Defense Electronics
 
-• Defense Systems
+Air Traffic Monitoring
+
 
 ---
----
 
-## 👩‍💻 Author
+## Developed By
 
 **Percy Deborah**
 
-B.Tech – Electronics and Communication Engineering
+B.Tech | Electronics and Communication Engineering
 
 Karunya Institute of Technology and Sciences
+
+*"Learning by Building."*
